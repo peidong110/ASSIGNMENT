@@ -1,15 +1,12 @@
-'''print("Welcome to the Agency . .")
+print("Welcome to the Agency . .")
 name = input("What is your first name again?")
 surName = input("What is your Last name name again?")
 wage = float(input("Right, right.. Well, "+"Mr."+surName+"How much was your hourly wage?"))
 birthday = input("Hmm, I see.. and one last question: when was your birthdayt?")
 weeklyWage = wage*0.6*40
 totalWeeks = int(365 / 7)
-yearlyWage = weeklyWage  * totalWeeks'''
+yearlyWage = weeklyWage  * totalWeeks
 from datetime import datetime
-
-birthday = input("Hmm, I see.. and one last question: when was your birthdayt?")
-
 today = datetime.today()
 birthdayVar = datetime.strptime(birthday,"%Y/%d/%m")
 
@@ -30,10 +27,12 @@ print("currentday"+str(today.day))'''
 
 
 
-'''print("Of course, how could I have forgotten!")
+print("Of course, how could I have forgotten!")
 print("Here's your ID card then:")
 print("−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−")
 print("-- Name: ",surName," ",name,"        −−")
-print("Income: ",yearlyWage,"$ / year")'''
+print("Income: ",yearlyWage,"$ / year","------")
+print("Birthday in:                       ----")
+print("--",str(myMonth),"Month:",abs(myday/4),"Weeks", myday,"days"")
 
 
