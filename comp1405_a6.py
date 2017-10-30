@@ -15,8 +15,7 @@ instructionYesOrNo = input("Do you need any instruction?yes or no")
 if instructionYesOrNo.lower() == "yes":
 	usr_photo = input("which background do you want? in .bmp")
 	usr_ghost = input("which ghost do you want? in .bmp")
-	usr_ghost_x_value = int(input("where do you want to put the ghost/x value"))
-	usr_ghost_y_vaule = int(input("where do you want to put the ghost/y value"))
+
 	background = pygame.image.load(usr_photo)
 	ghost = pygame.image.load(usr_ghost)
 
@@ -26,10 +25,12 @@ else:
 #we are now getting the width and the height of the ghost photo by using the function below
 (width,height) = ghost.get_rect().size
 while True:
+	usr_ghost_x_value = int(input("where do you want to put the ghost/x value"))
+	usr_ghost_y_vaule = int(input("where do you want to put the ghost/y value"))
 	if usr_ghost_x_value + width > 800 or usr_ghost_y_vaule > 600:
 		print("out of range")
-	else:
-		break
+	else:	
+		break;
 	 
 #this is meant to scan all the ghost photo, make the rgb(0,255,255) the same as the background
 #using the average value of the background and ghost can make ghost transparent
