@@ -15,6 +15,8 @@ instructionYesOrNo = input("Do you need any instruction?yes or no")
 if instructionYesOrNo.lower() == "yes":
 	usr_photo = input("which background do you want? in .bmp")
 	usr_ghost = input("which ghost do you want? in .bmp")
+	usr_ghost_x_value = int(input("where do you want to put the ghost/x value"))
+	usr_ghost_y_vaule = int(input("where do you want to put the ghost/y value"))
 	background = pygame.image.load(usr_photo)
 	ghost = pygame.image.load(usr_ghost)
 
@@ -23,7 +25,12 @@ else:
 	ghost = pygame.image.load("ghost_with_broom.bmp")		
 #we are now getting the width and the height of the ghost photo by using the function below
 (width,height) = ghost.get_rect().size
- 
+while True:
+	if usr_ghost_x_value + width > 800 or usr_ghost_y_vaule > 600:
+		print("out of range")
+	else:
+		break
+	 
 #this is meant to scan all the ghost photo, make the rgb(0,255,255) the same as the background
 #using the average value of the background and ghost can make ghost transparent
 for i in range(width):
@@ -40,7 +47,7 @@ for i in range(width):
  #after all the process then proceed with the showing the picture and it will stop only when user intend to quit
 while True:
     window.blit(background, (0,0))
-    window.blit(ghost,(100,100))
+    window.blit(ghost,(usr_ghost_x_value,usr_ghost_y_vaule))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
