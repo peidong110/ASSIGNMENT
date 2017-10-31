@@ -1,10 +1,4 @@
-# ============================================================
-#
-# Student Name (as it appears on cuLearn): Payton Pei
-# Student ID (9 digits in angle brackets): <101065299>
-# Course Code (for this current semester): COMP1405B
-#
-# ============================================================
+
 import pygame
 pygame.init()
 window = pygame.display.set_mode((800,600))
