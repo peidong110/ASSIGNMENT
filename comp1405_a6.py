@@ -1,3 +1,10 @@
+# ============================================================
+#
+# Student Name (as it appears on cuLearn): Payton Pei
+# Student ID (9 digits in angle brackets): <101065299>
+# Course Code (for this current semester): COMP1405B
+#
+# ============================================================
 import pygame
 pygame.init()
 window = pygame.display.set_mode((800,600))
@@ -23,11 +30,17 @@ usr_ghost_y = int(input("where do you want the ghost for y"))
 ghost = pygame.image.load(usr_ghost)
 (width,height) = ghost.get_rect().size
 
-
+# boundary check 
 while width +  usr_ghost_x > 800 or height + usr_ghost_y > 600:
 	print("out of range")
 else:
 	pass
+#nested loop
+for i in range(height):
+	for j in range(width):
+		(r1,g1,b1,a1) = ghost.get_at((i,j))
+		(r2,g2,b2,a2) = background.get_at(i + usr_ghost_x,j)
+		
 
 
 
