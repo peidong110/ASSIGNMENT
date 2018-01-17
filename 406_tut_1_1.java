@@ -1,27 +1,27 @@
 import java.util.*;
-public class TaxProgram {
-    public static void main(String[] args) {
-        double income, fedTax, provTax;
-        int dependents;
 
-        System.out.print("Please enter your taxable income: ");
-        income = new Scanner(System.in).nextDouble();
-
-
-        if (income == 59180. || income >59180.0){
-            fedTax = 0.17 * 29590.0 + 0.26 *29590.0 + (0.29 * (income - 59180.0));
-            System.out.println(fedTax);
-        }
-        else if(income <59179.99 || income > 29590.01){
-            fedTax = 0.17 * 29590.0 + 0.26 * (income - 29590.0);
-            System.out.println(String.format("%1.2f",fedTax));
-
-        }
-        else{
-            fedTax = 0.17 * income;
-            System.out.println((int)(fedTax));
-
+public class ChallengingFive {
+        public static void main(String[] args) {
+            int nums, sum;
+            System.out.println("How many exam mark do you want to average?");
+            nums = new Scanner(System.in).nextInt();
+            sum = 0;
+            int[] arr = new int[nums];
+            for(int count = 0; count < nums; count++){
+                System.out.println("Enter exam mark"+(count+1)+":");
+                int temp = new Scanner(System.in).nextInt();
+                sum += temp;
+                arr[count] = temp;
+            }
+            System.out.println("The average is: "+(sum / nums));
+            for(int z = 0; z < nums;z ++){
+                System.out.print(arr[z]);
+                for(int rep = 0;rep < arr[z];rep++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            System.out.println("The average is: "+(sum / nums));
         }
     }
 
-    }
